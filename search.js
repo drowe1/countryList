@@ -1,4 +1,4 @@
-function printHello(){
+function printPath(){
     code = document.getElementById("countryCode").value
     var s = ""
     var l = getPath(code)
@@ -108,20 +108,17 @@ class Node{
 }
 
 function bfs(problem){
+    //Perform a breadth-first search to find the optimal path
     let closed = new Array() //Array of states that have been closed
     let fringe = new Queue() //Queue of Nodes
     fringe.enqueue(new Node(problem.initial, null))
     while(!fringe.isEmpty()){
-        // console.log("Fringe: "+fringe.toString())
         let node = fringe.dequeue()
-        // console.log("Node: "+node.state)
         if(problem.goal == node.state){
             return node
         }
         if(!includes(closed, node.state)){
-            // console.log("Adding to closed: "+node.state)
             closed.push(node.state)
-            // console.log("Closed: "+closed)
             var i
             let l = node.expand(problem)
             for(i = 0; i < l.length; i++){
@@ -131,7 +128,3 @@ function bfs(problem){
     }
     return null
 }
-
-// m = new Map()
-// gr = new Graph(m)
-// p = new Problem("NIC", gr)
