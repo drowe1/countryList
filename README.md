@@ -1,7 +1,5 @@
 #Country List
 
-This project is running live at http://18.218.213.14/
-
 This project takes one of the following 3 letter codes
     • CAN – Canada borders the United States
     • USA – The United States borders Canada and Mexico
